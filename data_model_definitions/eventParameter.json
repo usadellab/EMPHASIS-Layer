@@ -1,0 +1,21 @@
+{
+    "model": "eventParameter",
+    "storageType": "",
+    "attributes": {
+        "key": "String",
+        "rdfValue": "String",
+        "value": "String",
+
+        "eventDbId": "String"
+    },
+    "associations": {
+        "event": {
+            "type": "to_one",
+            "target": "event",
+            "targetKey": "eventDbId",
+            "keyIn": "eventParameter",
+            "targetStorageType": "",
+            "label": "eventType"
+        }
+    }
+}

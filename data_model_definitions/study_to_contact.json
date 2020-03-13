@@ -1,0 +1,8 @@
+{
+    "model": "study_to_contact",
+    "storageType": "",
+    "attributes":{
+        "studyDbId": "String",
+        "contactDbId": "String"
+    }
+}

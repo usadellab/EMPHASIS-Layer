@@ -1,0 +1,8 @@
+{
+    "model": "observationUnit_to_event",
+    "storageType": "",
+    "attributes":{
+        "observationUnitDbId": "String",
+        "eventDbId": "String"
+    }
+}
