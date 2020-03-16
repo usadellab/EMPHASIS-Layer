@@ -3,20 +3,15 @@
     "storageType": "",
     "attributes": {
         "germplasmDbId": "String",
-        "germplasmName": "String",
         "locationDbId": "String",
-        "locationName": "String",
         "observationLevel": "String",
         "observationUnitName": "String",
         "observationUnitPUI": "String",
         "plantNumber": "String",
         "plotNumber": "String",
         "programDbId": "String",
-        "programName": "String",
         "studyDbId": "String",
-        "studyName": "String",
         "trialDbId": "String",
-        "trialName": "String",
         "observationUnitDbId": "String"
     },
     "associations": {

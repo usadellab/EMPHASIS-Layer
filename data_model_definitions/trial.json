@@ -7,7 +7,6 @@
         "documentationURL": "String",
         "endDate": "DateTime",
         "programDbId": "String",
-        "programName": "String",
         "startDate": "DateTime",
         "trialDescription": "String",
         "trialName": "String",
