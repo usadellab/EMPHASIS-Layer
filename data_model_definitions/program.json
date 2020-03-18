@@ -1,6 +1,6 @@
 {
     "model": "program",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "abbreviation": "String",
         "commonCropName": "String",
@@ -17,7 +17,7 @@
             "target": "trial",
             "targetKey": "programDbId",
             "keyIn": "trial",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "TrialName"
         },
         "observationUnits": {
@@ -25,7 +25,7 @@
             "target": "observationUnit",
             "targetKey": "programDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         }
     },

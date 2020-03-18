@@ -1,12 +1,13 @@
 {
     "model": "trial",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "active": "Boolean",
         "commonCropName": "String",
         "documentationURL": "String",
         "endDate": "DateTime",
         "programDbId": "String",
+        "programName": "String",
         "startDate": "DateTime",
         "trialDescription": "String",
         "trialName": "String",
@@ -20,7 +21,7 @@
             "targetKey": "contactDbId",
             "sourceKey": "trialDbId",
             "keysIn": "trial_to_contact",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "name"
         },
         "program": {
@@ -28,7 +29,7 @@
             "target": "program",
             "targetKey": "programDbId",
             "keyIn": "trial",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "programName"
         },
         "observationUnits": {
@@ -36,7 +37,7 @@
             "target": "observationUnit",
             "targetKey": "trialDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         },
         "studies": {
@@ -44,7 +45,7 @@
             "target": "study",
             "targetKey": "trialDbId",
             "keyIn": "study",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName"
         }
     },

@@ -1,6 +1,6 @@
 {
     "model": "observationTreatment",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "factor": "String",
         "modality": "String",
@@ -13,7 +13,7 @@
             "target": "observationUnit",
             "targetKey": "observationUnitDbId",
             "keyIn": "observationTreatment",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         }
     }

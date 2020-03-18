@@ -1,6 +1,6 @@
 {
     "model": "location",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "abbreviation": "String",
         "coordinateDescription": "String",
@@ -24,7 +24,7 @@
             "target": "observationUnit",
             "targetKey": "locationDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         },
         "studies": {
@@ -32,7 +32,7 @@
             "target": "study",
             "targetKey": "locationDbId",
             "keyIn": "study",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName"
         }
     },

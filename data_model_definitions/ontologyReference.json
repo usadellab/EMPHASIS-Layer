@@ -1,6 +1,6 @@
 {
     "model": "ontologyReference",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "documentationURL": "String",
         "ontologyDbId": "String",
@@ -13,7 +13,7 @@
             "target": "scale",
             "targetKey": "ontologyDbId",
             "keyIn": "scale",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "scaleName"
         },
         "methods" : {
@@ -21,7 +21,7 @@
             "target": "method",
             "targetKey": "ontologyDbId",
             "keyIn": "method",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "methodName"
         },
         "traits" : {
@@ -29,7 +29,7 @@
             "target": "trait",
             "targetKey": "ontologyDbId",
             "keyIn": "trait",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "traitName"
         },
         "observationVariables" : {
@@ -37,7 +37,7 @@
             "target": "observationVariable",
             "targetKey": "ontologyDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "ObservationVariableName"
         }
     },

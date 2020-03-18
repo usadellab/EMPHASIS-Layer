@@ -1,6 +1,6 @@
 {
     "model": "season",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "season": "String",
         "seasonDbId": "String",
@@ -12,7 +12,7 @@
             "target": "observation",
             "targetKey": "seasonDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName",
             "sublabel" : "value"
         },
@@ -22,7 +22,7 @@
             "targetKey": "studyDbId",
             "sourceKey": "seasonDbId",
             "keysIn": "study_to_season",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName"
         }
     },

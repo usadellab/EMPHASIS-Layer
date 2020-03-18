@@ -1,6 +1,6 @@
 {
     "model": "observationUnitPosition",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "blockNumber": "String",
         "entryNumber": "String",
@@ -16,7 +16,7 @@
             "target": "observationUnit",
             "targetKey": "observationUnitDbId",
             "keyIn": "observationUnitPosition",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         }
     },

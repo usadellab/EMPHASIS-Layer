@@ -1,6 +1,6 @@
 {
     "model": "eventParameter",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "key": "String",
         "rdfValue": "String",
@@ -14,7 +14,7 @@
             "target": "event",
             "targetKey": "eventDbId",
             "keyIn": "eventParameter",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "eventType"
         }
     }

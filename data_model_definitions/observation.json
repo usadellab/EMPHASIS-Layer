@@ -1,13 +1,15 @@
 {
     "model": "observation",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "collector": "String",
         "germplasmDbId": "String",
         "germplasmName": "String",
         "observationTimeStamp": "DateTime",
         "observationUnitDbId": "String",
+        "observationUnitName": "String",
         "observationVariableDbId": "String",
+        "observationVariableName": "String",
         "studyDbId": "String",
         "uploadedBy": "String",
         "value": "String",
@@ -22,7 +24,7 @@
             "target": "season",
             "targetKey": "seasonDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "season"
         },
         "germplasm": {
@@ -30,7 +32,7 @@
             "target": "germplasm",
             "targetKey": "germplasmDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "germplasmName"
         },
         "observationUnit": {
@@ -38,7 +40,7 @@
             "target": "observationUnit",
             "targetKey": "observationUnitDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         },
         "observationVariable": {
@@ -46,7 +48,7 @@
             "target": "observationVariable",
             "targetKey": "observationVariableDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName"
         },
         "study": {
@@ -54,7 +56,7 @@
             "target": "study",
             "targetKey": "studyDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName"
         },
         "image": {
@@ -62,7 +64,7 @@
             "target": "image",
             "targetKey": "imageDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "imageName"
         }
     },

@@ -1,6 +1,6 @@
 {
     "model": "image",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "copyright": "String",
         "description": "String",
@@ -21,7 +21,7 @@
             "target": "observation",
             "targetKey": "imageDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName",
             "sublabel" : "value"
         },
@@ -30,7 +30,7 @@
             "target": "observationUnit",
             "targetKey": "observationUnitDbId",
             "keyIn": "image",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         }
     },

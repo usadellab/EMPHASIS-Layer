@@ -1,6 +1,6 @@
 {
     "model": "contact",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "contactDbId": "String",
         "email": "String",
@@ -16,7 +16,7 @@
             "targetKey": "studyDbId",
             "sourceKey": "contactDbId",
             "keysIn": "study_to_contact",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName"
         },
         "trials": {
@@ -25,7 +25,7 @@
             "targetKey": "trialDbId",
             "sourceKey": "contactDbId",
             "keysIn": "trial_to_contact",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "trialName"
         }
     },

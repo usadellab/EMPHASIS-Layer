@@ -1,10 +1,11 @@
 {
     "model": "event",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "eventDbId": "String",
         "eventDescription": "String",
         "eventType": "String",
+        "eventTypeDbId": "String",
         "studyDbId": "String",
 
         "date": "DateTime"
@@ -16,7 +17,7 @@
             "target": "eventParameter",
             "targetKey": "eventDbId",
             "keyIn": "eventParameter",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "key"
         },
         "observationUnits": {
@@ -25,7 +26,7 @@
             "targetKey": "observationUnitDbId",
             "sourceKey": "eventDbId",
             "keysIn": "observationUnit_to_event",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         },
         "study": {
@@ -33,7 +34,7 @@
             "target": "study",
             "targetKey": "studyDbId",
             "keyIn": "event",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName",
             "sublabel": "studyDbId"
         }

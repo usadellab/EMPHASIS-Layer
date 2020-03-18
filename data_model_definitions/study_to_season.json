@@ -1,6 +1,6 @@
 {
     "model": "study_to_season",
-    "storageType": "",
+    "storageType": "sql",
     "attributes":{
         "studyDbId": "String",
         "seasonDbId": "String"

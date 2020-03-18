@@ -1,6 +1,6 @@
 {
     "model": "breedingMethod",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "abbreviation": "String",
         "breedingMethodDbId": "String",
@@ -13,7 +13,7 @@
             "target": "germplasm",
             "targetKey": "breedingMethodDbId",
             "keyIn": "germplasm",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "germplasmName"
         }
     },

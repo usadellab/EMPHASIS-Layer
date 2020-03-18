@@ -1,6 +1,6 @@
 {
     "model": "study",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "active": "Boolean",
         "commonCropName": "String",
@@ -14,6 +14,7 @@
         "studyName": "String",
         "studyType": "String",
         "trialDbId": "String",
+        "trialName": "String",
         "studyDbId": "String",
 
         "locationDbId": "String"
@@ -25,7 +26,7 @@
             "targetKey": "contactDbId",
             "sourceKey": "studyDbId",
             "keysIn": "study_to_contact",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "name"
         },
         "environmentParameters": {
@@ -33,7 +34,7 @@
             "target": "environmentParameter",
             "targetKey": "studyDbId",
             "keyIn": "environmentParameter",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "parameterName",
             "sublabel": "environmentParametersDbId"
         },
@@ -43,7 +44,7 @@
             "targetKey": "seasonDbId",
             "sourceKey": "studyDbId",
             "keysIn": "study_to_season",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "season"
         },
         "location": {
@@ -51,7 +52,7 @@
             "target": "location",
             "targetKey": "locationDbId",
             "keyIn": "study",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "locationName"
         },
         "trial": {
@@ -59,7 +60,7 @@
             "target": "trial",
             "targetKey": "trialDbId",
             "keyIn": "study",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "trialName"
         },
         "observationUnits": {
@@ -67,7 +68,7 @@
             "target": "observationUnit",
             "targetKey": "studyDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitName"
         },
         "observations": {
@@ -75,7 +76,7 @@
             "target": "observation",
             "targetKey": "studyDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName",
             "sublabel" : "value"
         },
@@ -84,7 +85,7 @@
             "target": "event",
             "targetKey": "studyDbId",
             "keyIn": "event",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "eventType"
         }
     },

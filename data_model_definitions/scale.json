@@ -1,6 +1,6 @@
 {
     "model": "scale",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "decimalPlaces": "Int",
         "scaleName": "String",
@@ -16,7 +16,7 @@
             "target": "observationVariable",
             "targetKey": "scaleDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName"
         },
         "ontologyReference": {
@@ -24,7 +24,7 @@
             "target": "ontologyReference",
             "targetKey": "ontologyDbId",
             "keyIn": "scale",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "ontologyName"
         }
     },

@@ -1,6 +1,6 @@
 {
     "model": "observationVariable",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "commonCropName": "String",
         "defaultValue": "String",
@@ -26,7 +26,7 @@
             "target": "method",
             "targetKey": "methodDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "methodName"
         },
         "ontologyReference": {
@@ -34,7 +34,7 @@
             "target": "ontologyReference",
             "targetKey": "ontologyDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "ontologyName"
         },
         "scale": {
@@ -42,7 +42,7 @@
             "target": "scale",
             "targetKey": "scaleDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "scaleName"
         },
         "trait": {
@@ -50,7 +50,7 @@
             "target": "trait",
             "targetKey": "traitDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "traitName"
         },
         "observations": {
@@ -58,7 +58,7 @@
             "target": "observation",
             "targetKey": "observationVariableDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName",
             "sublabel" : "value"
         }

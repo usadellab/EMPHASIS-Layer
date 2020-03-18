@@ -1,17 +1,22 @@
 {
     "model": "observationUnit",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "germplasmDbId": "String",
+        "germplasmName": "String",
         "locationDbId": "String",
+        "locationName": "String",
         "observationLevel": "String",
         "observationUnitName": "String",
         "observationUnitPUI": "String",
         "plantNumber": "String",
         "plotNumber": "String",
         "programDbId": "String",
+        "programName": "String",
         "studyDbId": "String",
+        "studyName": "String",
         "trialDbId": "String",
+        "trialName": "String",
         "observationUnitDbId": "String"
     },
     "associations": {
@@ -20,7 +25,7 @@
             "target": "observationTreatment",
             "targetKey": "observationUnitDbId",
             "keyIn": "observationTreatment",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "factor"
         },
         "observationUnitPosition": {
@@ -28,7 +33,7 @@
             "target": "observationUnitPosition",
             "targetKey": "observationUnitDbId",
             "keyIn": "observationUnitPosition",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationUnitPositionName"
         },
         "observations": {
@@ -36,7 +41,7 @@
             "target": "observation",
             "targetKey": "observationUnitDbId",
             "keyIn": "observation",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName",
             "sublabel" : "value"
         },
@@ -45,7 +50,7 @@
             "target": "germplasm",
             "targetKey": "germplasmDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "germplasmName"
         },
         "location": {
@@ -53,7 +58,7 @@
             "target": "location",
             "targetKey": "locationDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "locationName"
         },
         "program": {
@@ -61,7 +66,7 @@
             "target": "program",
             "targetKey": "programDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "programName"
         },
         "study": {
@@ -69,7 +74,7 @@
             "target": "study",
             "targetKey": "studyDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "studyName"
         },
         "trial": {
@@ -77,7 +82,7 @@
             "target": "trial",
             "targetKey": "trialDbId",
             "keyIn": "observationUnit",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "trialName"
         },
         "images": {
@@ -85,7 +90,7 @@
             "target": "image",
             "targetKey": "observationUnitDbId",
             "keyIn": "image",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "imageName"
         },
         "events": {
@@ -94,7 +99,7 @@
             "targetKey": "eventDbId",
             "sourceKey": "observationUnitDbId",
             "keysIn": "observationUnit_to_event",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "eventType"
         }
     },

@@ -1,6 +1,6 @@
 {
     "model": "trait",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "attribute": "String",
         "entity": "String",
@@ -20,7 +20,7 @@
             "target": "observationVariable",
             "targetKey": "traitDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName"
         },
         "ontologyReference": {
@@ -28,7 +28,7 @@
             "target": "ontologyReference",
             "targetKey": "ontologyDbId",
             "keyIn": "trait",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "ontologyName"
         }
     },

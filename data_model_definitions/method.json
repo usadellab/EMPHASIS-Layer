@@ -1,6 +1,6 @@
 {
     "model": "method",
-    "storageType": "",
+    "storageType": "sql",
     "attributes": {
         "description": "String",
         "formula": "String",
@@ -17,7 +17,7 @@
             "target": "observationVariable",
             "targetKey": "methodDbId",
             "keyIn": "observationVariable",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "observationVariableName"
         },
         "ontologyReference": {
@@ -25,7 +25,7 @@
             "target": "ontologyReference",
             "targetKey": "ontologyDbId",
             "keyIn": "method",
-            "targetStorageType": "",
+            "targetStorageType": "sql",
             "label": "ontologyName"
         }
     },
