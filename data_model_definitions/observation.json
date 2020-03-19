@@ -4,7 +4,6 @@
     "attributes": {
         "collector": "String",
         "germplasmDbId": "String",
-        "germplasmName": "String",
         "observationTimeStamp": "DateTime",
         "observationUnitDbId": "String",
         "observationVariableDbId": "String",
