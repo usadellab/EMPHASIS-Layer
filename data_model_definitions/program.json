@@ -18,7 +18,7 @@
             "targetKey": "programDbId",
             "keyIn": "trial",
             "targetStorageType": "",
-            "label": "TrialName"
+            "label": "trialName"
         },
         "observationUnits": {
             "type": "to_many",
