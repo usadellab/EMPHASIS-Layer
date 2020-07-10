@@ -5,7 +5,8 @@
         "factor": "String",
         "modality": "String",
 
-        "observationUnitDbId": "String"
+        "observationUnitDbId": "String",
+        "observationTreatmentDbId": "String"
     },
     "associations": {
         "observationUnit": {
@@ -16,5 +17,6 @@
             "targetStorageType": "",
             "label": "observationUnitName"
         }
-    }
+    },
+    "internalId": "observationTreatmentDbId"
 }

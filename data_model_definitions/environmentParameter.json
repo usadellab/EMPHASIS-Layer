@@ -10,7 +10,8 @@
         "value": "String",
         "valuePUI": "String",
 
-        "studyDbId": "String"
+        "studyDbId": "String",
+        "environmentParameterDbId": "String"
     },
     "associations": {
         "study": {
@@ -21,5 +22,6 @@
             "targetStorageType": "",
             "label": "studyName"
         }
-    }
+    },
+    "internalId": "environmentParameterDbId"
 }

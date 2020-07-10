@@ -6,7 +6,8 @@
         "rdfValue": "String",
         "value": "String",
 
-        "eventDbId": "String"
+        "eventDbId": "String",
+        "eventParameterDbId": "String"
     },
     "associations": {
         "event": {
@@ -17,5 +18,6 @@
             "targetStorageType": "",
             "label": "eventType"
         }
-    }
+    },
+    "internalId": "eventParameterDbId"
 }
