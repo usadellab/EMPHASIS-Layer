@@ -1,0 +1,23 @@
+{
+  "model": "investigation",
+  "storageType": "",
+  "attributes": {
+    "investigation_id": "String",
+    "title": "String",
+    "description": "String",
+    "ontologyRef": "String",
+    "beginDate": "Date",
+    "endDate": "Date"
+  },
+  "associations": {
+    "contacts": {
+      "type": "to_many",
+      "target": "contact"
+    },
+    "studies": {
+      "type": "to_many",
+      "target": "contact"
+    }
+  },
+  "internalId": "investigation_id"
+}

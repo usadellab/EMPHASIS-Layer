@@ -1,0 +1,30 @@
+{
+  "model": "factor",
+  "storageType": "",
+  "attributes": {
+    "factor_id": "String",
+    "name": "String",
+    "description": "String",
+    "type": "String",
+
+    "assay_ids": "[String]",
+    "study_ids": "[String]",
+    "ontologyAnnotation_id": "String"
+  },
+  "associations": {
+    "assays": {
+      "type": "to_many",
+      "target": "assay"
+    },
+    "studies": {
+      "type": "to_many",
+      "target": "study"
+    },
+    "ontologyAnnotation": {
+      "type": "to_one",
+      "target": "ontologyAnnotation"
+    }
+    
+  },
+  "internalId": "factor_id"
+}

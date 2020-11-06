@@ -1,0 +1,29 @@
+{
+  "model": "protocol",
+  "storageType": "",
+  "attributes": {
+    "protocol_id": "String",
+    "name": "String",
+    "description": "String",
+    "type": "Date",
+
+    "study_ids": "[String]",
+    "assay_ids": "[String]",
+    "ontologyAnnotation_id": "String"
+  },
+  "associations": {
+    "studies": {
+      "type": "to_many",
+      "target": "study"
+    },
+    "assays": {
+      "type": "to_many",
+      "target": "assay"
+    },
+    "ontologyAnnotation": {
+      "type": "to_one",
+      "target": "ontologyAnnotation"
+    }
+  },
+  "internalId": "protocol_id"
+}

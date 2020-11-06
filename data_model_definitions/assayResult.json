@@ -1,0 +1,27 @@
+{
+  "model": "assayResult",
+  "storageType": "",
+  "attributes": {
+    "assayResult_id": "String",
+    "unit": "String",
+    "unitOntologyUrl": "String",
+    "value_as_str": "String",
+    "value_as_int": "Int",
+    "value_as_num": "Float",
+    "value_as_bool": "boolean",
+
+    "ontologyAnnotation_ids": "[String]",
+    "assay_id": "String"
+  },
+  "associations": {
+    "assay": {
+      "type": "to_one",
+      "target": "assay"
+    },
+    "observedMaterial": {
+      "type": "to_one",
+      "target": "material"
+    }
+  },
+  "internalId": "assayResult_id"
+}

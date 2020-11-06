@@ -1,8 +1,0 @@
-{
-    "model": "trial_to_contact",
-    "storageType": "",
-    "attributes":{
-        "trialDbId": "String",
-        "contactDbId": "String"
-    }
-}

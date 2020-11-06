@@ -1,0 +1,59 @@
+
+{
+  "model": "fileAttachment",
+  "storageType": "",
+  "attributes": {
+    "ontologyAnnotation_id": "String",
+    "fileName": "String",
+    "mimeType": "String",
+    "fileSizeKb": "Int",
+    "fileURL": "String",
+    "isImage": "boolean",
+    "smallThumbnailURL": "String",
+    "bigThumbnailURL": "String",
+
+    "investigation_ids": "[String]",
+    "study_ids": "[String]",
+    "assay_ids": "[String]",
+    "assayResult_ids": "[String]",
+    "factor_ids": "[String]",
+    "material_ids": "[String]",
+    "ontologyAnnotation_ids": "[String]",
+    "protocol_ids": "[String]"
+  },
+  "associations": {
+    "investigations": {
+      "type": "to_many",
+      "target": "investigation"
+    },
+    "studies": {
+      "type": "to_many",
+      "target": "study"
+    },
+    "assays": {
+      "type": "to_many",
+      "target": "assay"
+    },
+    "assayResults": {
+      "type": "to_many",
+      "target": "assayResult"
+    },
+    "factors": {
+      "type": "to_many",
+      "target": "factor"
+    },
+    "materials": {
+      "type": "to_many",
+      "target": "material"
+    },
+    "ontologyAnnotations": {
+      "type": "to_many",
+      "target": "ontologyAnnotation"
+    },
+    "protocols": {
+      "type": "to_many",
+      "target": "protocol"
+    }
+  },
+  "internalId": "fileAttachment_id"
+}

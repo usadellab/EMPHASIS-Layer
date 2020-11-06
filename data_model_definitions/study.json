@@ -1,92 +1,39 @@
 {
-    "model": "study",
-    "storageType": "",
-    "attributes": {
-        "active": "Boolean",
-        "commonCropName": "String",
-        "culturalPractices": "String",
-        "documentationURL": "String",
-        "endDate": "DateTime",
-        "license": "String",
-        "observationUnitsDescription": "String",
-        "startDate": "DateTime",
-        "studyDescription": "String",
-        "studyName": "String",
-        "studyType": "String",
-        "trialDbId": "String",
-        "studyDbId": "String",
+  "model": "study",
+  "storageType": "",
+  "attributes": {
+    "study_id": "String",
+    "title": "String",
+    "description": "String",
+    "startDate": "Date",
+    "endDate": "Date",
 
-        "locationDbId": "String"
+    "investigation_id": "String",
+    "factor_ids": "[String]",
+    "protocol_ids": "[String]",
+    "contact_ids": "[String]"
+  },
+  "associations": {
+    "investigation": {
+      "type": "to_one",
+      "target": "investigation"
     },
-    "associations": {
-        "contacts": {
-            "type": "to_many",
-            "target": "contact",
-            "targetKey": "contactDbId",
-            "sourceKey": "studyDbId",
-            "keysIn": "study_to_contact",
-            "targetStorageType": "",
-            "label": "name"
-        },
-        "environmentParameters": {
-            "type": "to_many",
-            "target": "environmentParameter",
-            "targetKey": "studyDbId",
-            "keyIn": "environmentParameter",
-            "targetStorageType": "",
-            "label": "parameterName",
-            "sublabel": "environmentParametersDbId"
-        },
-        "seasons": {
-            "type": "to_many",
-            "target": "season",
-            "targetKey": "seasonDbId",
-            "sourceKey": "studyDbId",
-            "keysIn": "study_to_season",
-            "targetStorageType": "",
-            "label": "season"
-        },
-        "location": {
-            "type": "to_one",
-            "target": "location",
-            "targetKey": "locationDbId",
-            "keyIn": "study",
-            "targetStorageType": "",
-            "label": "locationName"
-        },
-        "trial": {
-            "type": "to_one",
-            "target": "trial",
-            "targetKey": "trialDbId",
-            "keyIn": "study",
-            "targetStorageType": "",
-            "label": "trialName"
-        },
-        "observationUnits": {
-            "type": "to_many",
-            "target": "observationUnit",
-            "targetKey": "studyDbId",
-            "keyIn": "observationUnit",
-            "targetStorageType": "",
-            "label": "observationUnitName"
-        },
-        "observations": {
-            "type": "to_many",
-            "target": "observation",
-            "targetKey": "studyDbId",
-            "keyIn": "observation",
-            "targetStorageType": "",
-            "label": "observationVariableName",
-            "sublabel" : "value"
-        },
-        "events": {
-            "type": "to_many",
-            "target": "event",
-            "targetKey": "studyDbId",
-            "keyIn": "event",
-            "targetStorageType": "",
-            "label": "eventType"
-        }
+    "assays": {
+      "type": "to_many",
+      "target": "assay"
     },
-    "internalId": "studyDbId"
+    "factors": {
+      "type": "to_many",
+      "target": "factor"
+    },
+    "protocols": {
+      "type": "to_many",
+      "traget": "protocol"
+    },
+    "contacts": {
+      "type:": "to_many",
+      "target": "contact"
+    }
+  },
+  "internalId": "study_id"
 }

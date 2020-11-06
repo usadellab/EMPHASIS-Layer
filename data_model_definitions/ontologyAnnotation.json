@@ -1,0 +1,50 @@
+{
+  "model": "ontologyAnnotation",
+  "storageType": "",
+  "attributes": {
+    "ontologyAnnotation_id": "String",
+    "ontology": "String",
+    "ontologyURL": "String",
+    "term": "String",
+    "termURL": "String",
+    
+    "investigation_ids" : "[String]",
+    "study_ids": "[String]",
+    "assay_ids": "[String]",
+    "assayResult_ids": "[String]",
+    "factor_ids": "[String]",
+    "material_ids": "[String]",
+    "protocol_ids": "[String]"
+  },
+  "associations": {
+    "investigations": {
+      "type": "to_many",
+      "target": "investigation"
+    },
+    "studies": {
+      "type": "to_many",
+      "target": "study"
+    },
+    "assays": {
+      "type": "to_many",
+      "target": "assay"
+    },
+    "assayResults": {
+      "type": "to_many",
+      "target": "assayResult"
+    },
+    "factors": {
+      "type": "to_many",
+      "target": "factor"
+    },
+    "materials": {
+      "type": "to_many",
+      "target": "material"
+    },
+    "protocols": {
+      "type": "to_many",
+      "target": "protocol"
+    }
+  },
+  "internalId": "ontologyAnnotation_id"
+}

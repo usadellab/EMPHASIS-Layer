@@ -1,0 +1,44 @@
+{
+  "model": "assay",
+  "storageType": "",
+  "attributes": {
+    "assay_id": "String",
+    "measurement": "String",
+    "measurementOntologyUrl": "String",
+    "measurementDate": "Date",
+    "technology": "String",
+    "technologyOntologyRef": "String",
+    "platform": "String",
+    "platformOntologyRef": "String",
+    "method": "String",
+    "methodOntologyRef": "String",
+
+    "study_id": "String",
+    "factor_ids": "[String]",
+    "material_ids": "[String",
+    "ontologyAnnotation_ids": "[String]"
+  },
+  "associations": {
+    "study": {
+      "type": "to_one",
+      "target": "study"
+    },
+    "assayResults": {
+      "type": "to_many",
+      "target": "assayResult"
+    },
+    "factors": {
+      "type": "to_many",
+      "target": "factor"
+    },
+    "materials": {
+      "type": "to_many",
+      "target": "material"
+    },
+    "ontologyAnnotations": {
+      "type": "to_many",
+      "target": "ontologyAnnotation"
+    }
+  },
+  "internal_id": "assay_id"
+}

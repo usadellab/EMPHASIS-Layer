@@ -1,33 +1,26 @@
 {
-    "model": "contact",
-    "storageType": "",
-    "attributes": {
-        "contactDbId": "String",
-        "email": "String",
-        "instituteName": "String",
-        "name": "String",
-        "orcid": "String",
-        "type": "String"
+  "model": "contact",
+  "storageType": "",
+  "attributes": { 
+    "contact_id" : "String",
+    "name" : "String",
+    "email" : "String",
+    "phone" : "String",
+    "address" : "String",
+    "affiliation" : "String",
+
+    "study_ids": "[String]",
+    "investigation_ids": "[String]"
+  },
+  "associations": {
+    "studies": {
+      "type": "to_many",
+      "target": "study"
     },
-    "associations": {
-        "studies": {
-            "type": "to_many",
-            "target": "study",
-            "targetKey": "studyDbId",
-            "sourceKey": "contactDbId",
-            "keysIn": "study_to_contact",
-            "targetStorageType": "",
-            "label": "studyName"
-        },
-        "trials": {
-            "type": "to_many",
-            "target": "trial",
-            "targetKey": "trialDbId",
-            "sourceKey": "contactDbId",
-            "keysIn": "trial_to_contact",
-            "targetStorageType": "",
-            "label": "trialName"
-        }
-    },
-    "internalId": "contactDbId"
+    "investigations": {
+      "type": "to_many",
+      "target": "investigation"
+    }
+  },
+  "internalId": "contact_id"
 }
