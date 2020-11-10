@@ -14,36 +14,73 @@
     "assayResult_ids": "[String]",
     "factor_ids": "[String]",
     "material_ids": "[String]",
-    "protocol_ids": "[String]"
+    "protocol_ids": "[String]",
+    "contact_ids": "[String]"
   },
   "associations": {
     "investigations": {
       "type": "to_many",
-      "target": "investigation"
+      "target": "investigation",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "investigation_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     },
     "studies": {
       "type": "to_many",
-      "target": "study"
+      "target": "study",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "study_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     },
     "assays": {
       "type": "to_many",
-      "target": "assay"
+      "target": "assay",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "assay_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     },
     "assayResults": {
       "type": "to_many",
-      "target": "assayResult"
+      "target": "assayResult",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "assayResult_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     },
     "factors": {
       "type": "to_many",
-      "target": "factor"
+      "target": "factor",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "factor_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     },
     "materials": {
       "type": "to_many",
-      "target": "material"
+      "target": "material",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "material_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     },
     "protocols": {
       "type": "to_many",
-      "target": "protocol"
+      "target": "protocol",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "protocol_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
+    },
+    "contacts": {
+      "type": "to_many",
+      "target": "contact",
+      "targetKey": "ontologyAnnotation_ids",
+      "sourceKey": "contact_ids",
+      "keyIn": "ontologyAnnotation",
+      "reverseAssociationType": "to_many"
     }
   },
   "internalId": "ontologyAnnotation_id"

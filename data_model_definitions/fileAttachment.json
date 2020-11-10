@@ -3,7 +3,7 @@
   "model": "fileAttachment",
   "storageType": "",
   "attributes": {
-    "ontologyAnnotation_id": "String",
+    "fileAttachment_id": "String",
     "fileName": "String",
     "mimeType": "String",
     "fileSizeKb": "Int",
@@ -18,41 +18,64 @@
     "assayResult_ids": "[String]",
     "factor_ids": "[String]",
     "material_ids": "[String]",
-    "ontologyAnnotation_ids": "[String]",
     "protocol_ids": "[String]"
   },
   "associations": {
     "investigations": {
       "type": "to_many",
-      "target": "investigation"
+      "target": "investigation",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "investigation_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     },
     "studies": {
       "type": "to_many",
-      "target": "study"
+      "target": "study",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "study_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     },
     "assays": {
       "type": "to_many",
-      "target": "assay"
+      "target": "assay",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "assay_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     },
     "assayResults": {
       "type": "to_many",
-      "target": "assayResult"
+      "target": "assayResult",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "assayResult_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     },
     "factors": {
       "type": "to_many",
-      "target": "factor"
+      "target": "factor",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "factor_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     },
     "materials": {
       "type": "to_many",
-      "target": "material"
-    },
-    "ontologyAnnotations": {
-      "type": "to_many",
-      "target": "ontologyAnnotation"
+      "target": "material",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "material_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     },
     "protocols": {
       "type": "to_many",
-      "target": "protocol"
+      "target": "protocol",
+      "targetKey": "fileAttachment_ids",
+      "sourceKey": "protocol_ids",
+      "keyIn": "fileAttachment",
+      "reverseAssociationType": "to_many"
     }
   },
   "internalId": "fileAttachment_id"

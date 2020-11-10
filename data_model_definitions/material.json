@@ -9,51 +9,65 @@
 
     "study_ids": "[String]",
     "assay_ids": "[String]",
-    "ontologyAnnotation_id": "String",
+    "ontologyAnnotation_ids": "[String]",
     "sourceSet_ids": "[String]",
     "element_ids": "[String]",
-    "father_ids": "[String]",
-    "mother_ids": "[String]",
-    "offspring_ids": "[String]"
-
+    "fileAttachment_ids": "[String]"
   },
   "associations": {
     "studies": {
       "type": "to_many",
-      "target": "study"
+      "target": "study",
+      "targetKey": "material_ids",
+      "sourceKey": "study_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many"
     },
     "assays": {
       "type": "to_many",
-      "target": "assay"
+      "target": "assay",
+      "targetKey": "material_ids",
+      "sourceKey": "assay_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many"
     },
     "assayResults": {
       "type": "to_many",
-      "target": "assayResult"
+      "target": "assayResult",
+      "targetKey": "material_id",
+      "keyIn": "assayResult"
     },
     "ontologyAnnotation": {
-      "type": "to_one",
-      "target": "ontologyAnnotation"
+      "type": "to_many",
+      "target": "ontologyAnnotation",
+      "targetKey": "material_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many"
     },
-
     "sourceSets" : {
       "type": "to_many",
-      "target": "material"
+      "target": "material",
+      "targetKey": "element_ids",
+      "sourceKey": "sourceSet_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many"
     },
     "elements" : {
       "type": "to_many",
-      "target": "material"
+      "target": "material",
+      "targetKey": "sourceSet_ids",
+      "sourceKey": "element_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many"
     },
-    "father" : {
-      "type": "to_one",
-      "target": "material"
-    },
-    "mother" : {
-      "type": "to_one",
-      "target": "material"
-    },
-    "offspring" : {
-      "type": "to_one",
-      "target": "material"
+    "fileAttachments": {
+      "type": "to_many",
+      "target": "fileAttachment",
+      "targetKey": "material_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many"
     }
 
   },

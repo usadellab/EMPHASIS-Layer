@@ -3,7 +3,7 @@
   "storageType": "",
   "attributes": {
     "study_id": "String",
-    "title": "String",
+    "name": "String",
     "description": "String",
     "startDate": "Date",
     "endDate": "Date",
@@ -11,28 +11,71 @@
     "investigation_id": "String",
     "factor_ids": "[String]",
     "protocol_ids": "[String]",
-    "contact_ids": "[String]"
+    "contact_ids": "[String]",
+    "material_ids": "[String]",
+    "ontologyAnnotation_ids": "[String]",
+    "fileAttachment_ids": "[String]"
   },
   "associations": {
     "investigation": {
       "type": "to_one",
-      "target": "investigation"
+      "target": "investigation",
+      "targetKey": "investigation_id",
+      "keyIn": "study"
     },
     "assays": {
       "type": "to_many",
-      "target": "assay"
+      "target": "assay",
+      "targetKey": "study_id",
+      "keyIn": "assay"
     },
     "factors": {
       "type": "to_many",
-      "target": "factor"
+      "target": "factor",
+      "targetKey": "study_ids",
+      "sourceKey": "factor_ids",
+      "keyIn": "study",
+      "reverseAssociationType": "to_many"
     },
     "protocols": {
       "type": "to_many",
-      "traget": "protocol"
+      "target": "protocol",
+      "targetKey": "study_ids",
+      "sourceKey": "protocol_ids",
+      "keyIn": "study",
+      "reverseAssociationType": "to_many"
     },
     "contacts": {
-      "type:": "to_many",
-      "target": "contact"
+      "type": "to_many",
+      "target": "contact",
+      "targetKey": "study_ids",
+      "sourceKey": "contact_ids",
+      "keyIn": "study",
+      "reverseAssociationType": "to_many"
+    },
+    "materials": {
+      "type": "to_many",
+      "target": "material",
+      "targetKey": "study_ids",
+      "sourceKey": "material_ids",
+      "keyIn": "study",
+      "reverseAssociationType": "to_many"
+    },
+    "ontologyAnnotations": {
+      "type": "to_many",
+      "target": "ontologyAnnotation",
+      "targetKey": "study_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "study",
+      "reverseAssociationType": "to_many"
+    },
+    "fileAttachments": {
+      "type": "to_many",
+      "target": "fileAttachment",
+      "targetKey": "study_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "study",
+      "reverseAssociationType": "to_many"
     }
   },
   "internalId": "study_id"

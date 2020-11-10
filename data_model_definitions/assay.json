@@ -4,41 +4,63 @@
   "attributes": {
     "assay_id": "String",
     "measurement": "String",
-    "measurementOntologyUrl": "String",
-    "measurementDate": "Date",
     "technology": "String",
-    "technologyOntologyRef": "String",
     "platform": "String",
-    "platformOntologyRef": "String",
     "method": "String",
-    "methodOntologyRef": "String",
 
     "study_id": "String",
     "factor_ids": "[String]",
-    "material_ids": "[String",
-    "ontologyAnnotation_ids": "[String]"
+    "material_ids": "[String]",
+    "ontologyAnnotation_ids": "[String]",
+    "fileAttachment_ids": "[String]"
   },
   "associations": {
     "study": {
       "type": "to_one",
-      "target": "study"
+      "target": "study",
+      "targetKey": "study_id",
+      "keyIn": "assay"
     },
     "assayResults": {
       "type": "to_many",
-      "target": "assayResult"
+      "target": "assayResult",
+      "targetKey": "assay_id",
+      "keyIn": "assayResult"
     },
     "factors": {
       "type": "to_many",
-      "target": "factor"
+      "target": "factor",
+      "targetKey": "assay_ids",
+      "sourceKey": "factor_ids",
+      "keyIn": "assay",
+      "reverseAssociationType": "to_many"
+
     },
     "materials": {
       "type": "to_many",
-      "target": "material"
+      "target": "material",
+      "targetKey": "assay_ids",
+      "sourceKey": "material_ids",
+      "keyIn": "assay",
+      "reverseAssociationType": "to_many"
     },
     "ontologyAnnotations": {
       "type": "to_many",
-      "target": "ontologyAnnotation"
+      "target": "ontologyAnnotation",
+      "targetKey": "assay_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "assay",
+      "reverseAssociationType": "to_many"
+
+    },
+    "fileAttachments": {
+      "type": "to_many",
+      "target": "fileAttachment",
+      "targetKey": "assay_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "assay",
+      "reverseAssociationType": "to_many"
     }
   },
-  "internal_id": "assay_id"
+  "internalId": "assay_id"
 }

@@ -9,20 +9,41 @@
 
     "assay_ids": "[String]",
     "study_ids": "[String]",
-    "ontologyAnnotation_id": "String"
+    "ontologyAnnotation_ids": "[String]",
+    "fileAttachment_ids": "[String]"
   },
   "associations": {
     "assays": {
       "type": "to_many",
-      "target": "assay"
+      "target": "assay",
+      "targetKey": "factor_ids",
+      "sourceKey": "assay_ids",
+      "keyIn": "factor",
+      "reverseAssociationType": "to_many"
     },
     "studies": {
       "type": "to_many",
-      "target": "study"
+      "target": "study",
+      "targetKey": "factor_ids",
+      "sourceKey": "study_ids",
+      "keyIn": "factor",
+      "reverseAssociationType": "to_many"
     },
     "ontologyAnnotation": {
-      "type": "to_one",
-      "target": "ontologyAnnotation"
+      "type": "to_many",
+      "target": "ontologyAnnotation",
+      "targetKey": "factor_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "factor",
+      "reverseAssociationType": "to_many"
+    },
+    "fileAttachments": {
+      "type": "to_many",
+      "target": "fileAttachment",
+      "targetKey": "factor_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "factor",
+      "reverseAssociationType": "to_many"
     }
     
   },

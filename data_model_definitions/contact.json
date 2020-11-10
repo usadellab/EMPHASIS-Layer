@@ -10,16 +10,42 @@
     "affiliation" : "String",
 
     "study_ids": "[String]",
-    "investigation_ids": "[String]"
+    "investigation_ids": "[String]",
+    "fileAttachment_ids": "[String]",
+    "ontologyAnnotation_ids": "[String]"
   },
   "associations": {
     "studies": {
       "type": "to_many",
-      "target": "study"
+      "target": "study",
+      "targetKey": "contact_ids",
+      "sourceKey": "study_ids",
+      "keyIn": "contact",
+      "reverseAssociationType": "to_many"
     },
     "investigations": {
       "type": "to_many",
-      "target": "investigation"
+      "target": "investigation",
+      "targetKey": "contact_ids",
+      "sourceKey": "investigation_ids",
+      "keyIn": "contact",
+      "reverseAssociationType": "to_many"
+    },
+    "fileAttachments": {
+      "type": "to_many",
+      "target": "fileAttachment",
+      "targetKey": "contact_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "contact",
+      "reverseAssociationType": "to_many"
+    },
+    "ontologyAnnotations": {
+      "type": "to_many",
+      "target": "ontologyAnnotation",
+      "targetKey": "contact_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "contact",
+      "reverseAssociationType": "to_many"
     }
   },
   "internalId": "contact_id"
