@@ -1,45 +1,43 @@
 {
-  "model": "protocol",
+  "model": "trial",
   "storageType": "sql",
   "attributes": {
-    "protocol_id": "String",
-    "name": "String",
-    "description": "String",
-    "type": "Date",
+    "trial_id": "String",
+    "trialName": "String",
+    "trialDescription": "String",
+    "startDate": "Date",
+    "endDate": "Date",
 
-    "study_ids": "[String]",
-    "assay_ids": "[String]",
     "ontologyAnnotation_ids": "[String]",
+    "contact_ids": "[String]",
     "fileAttachment_ids": "[String]"
   },
   "associations": {
+    "contacts": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "contact",
+      "targetKey": "trial_ids",
+      "sourceKey": "contact_ids",
+      "keyIn": "trial",
+      "reverseAssociationType": "to_many",
+      "label": "name"
+    },
     "studies": {
       "type": "to_many",
       "targetStorageType": "sql",
       "target": "study",
-      "targetKey": "protocol_ids",
-      "sourceKey": "study_ids",
-      "keyIn": "protocol",
-      "reverseAssociationType": "to_many",
+      "targetKey": "trial_id",
+      "keyIn": "study",
       "label": "studyName"
     },
-    "assays": {
-      "type": "to_many",
-      "targetStorageType": "sql",
-      "target": "assay",
-      "targetKey": "protocol_ids",
-      "sourceKey": "assay_ids",
-      "keyIn": "protocol",
-      "reverseAssociationType": "to_many",
-      "label": "measurement"
-    },
-    "ontologyAnnotation": {
+    "ontologyAnnotations": {
       "type": "to_many",
       "targetStorageType": "sql",
       "target": "ontologyAnnotation",
-      "targetKey": "protocol_ids",
+      "targetKey": "trial_ids",
       "sourceKey": "ontologyAnnotation_ids",
-      "keyIn": "protocol",
+      "keyIn": "trial",
       "reverseAssociationType": "to_many",
       "label": "ontology"
     },
@@ -47,12 +45,12 @@
       "type": "to_many",
       "targetStorageType": "sql",
       "target": "fileAttachment",
-      "targetKey": "protocol_ids",
+      "targetKey": "trial_ids",
       "sourceKey": "fileAttachment_ids",
-      "keyIn": "protocol",
+      "keyIn": "trial",
       "reverseAssociationType": "to_many",
       "label": "fileName"
     }
   },
-  "internalId": "protocol_id"
+  "internalId": "trial_id"
 }

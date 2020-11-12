@@ -1,0 +1,57 @@
+{
+  "model": "observation",
+  "storageType": "sql",
+  "attributes": {
+    "observation_id": "String",
+    "unit": "String",
+    "value_as_str": "String",
+    "value_as_int": "Int",
+    "value_as_num": "Float",
+    "value_as_bool": "Boolean",
+    "value_as_float": "Float",
+
+    "assay_id": "String",
+    "germplasm_id": "String",
+    "ontologyAnnotation_ids": "[String]",
+    "fileAttachment_ids": "[String]"
+  },
+  "associations": {
+    "assay": {
+      "type": "to_one",
+      "targetStorageType": "sql",
+      "target": "assay",
+      "targetKey": "assay_id",
+      "keyIn": "observation",
+      "label": "measurement"
+    },
+    "germplasm": {
+      "type": "to_one",
+      "targetStorageType": "sql",
+      "target": "germplasm",
+      "targetKey": "germplasm_id",
+      "keyIn": "observation",
+      "label": "germplasmName"
+    },
+    "fileAttachments": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "fileAttachment",
+      "targetKey": "observation_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "observation",
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
+    },
+    "ontologyAnnotations": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "ontologyAnnotation",
+      "targetKey": "observation_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "observation",
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
+    }
+  },
+  "internalId": "observation_id"
+}

@@ -1,81 +1,97 @@
 {
   "model": "study",
-  "storageType": "",
+  "storageType": "sql",
   "attributes": {
     "study_id": "String",
-    "name": "String",
-    "description": "String",
+    "studyName": "String",
+    "studyDescription": "String",
     "startDate": "Date",
     "endDate": "Date",
 
-    "investigation_id": "String",
+    "trial_id": "String",
     "factor_ids": "[String]",
     "protocol_ids": "[String]",
     "contact_ids": "[String]",
-    "material_ids": "[String]",
+    "germplasm_ids": "[String]",
     "ontologyAnnotation_ids": "[String]",
     "fileAttachment_ids": "[String]"
   },
   "associations": {
-    "investigation": {
+    "trial": {
       "type": "to_one",
-      "target": "investigation",
-      "targetKey": "investigation_id",
-      "keyIn": "study"
+      "targetStorageType": "sql",
+      "target": "trial",
+      "targetKey": "trial_id",
+      "keyIn": "study",
+      "label": "trialName"
     },
     "assays": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "assay",
       "targetKey": "study_id",
-      "keyIn": "assay"
+      "keyIn": "assay",
+      "label": "measurement"
     },
     "factors": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "factor",
       "targetKey": "study_ids",
       "sourceKey": "factor_ids",
       "keyIn": "study",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
     "protocols": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "protocol",
       "targetKey": "study_ids",
       "sourceKey": "protocol_ids",
       "keyIn": "study",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
     "contacts": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "contact",
       "targetKey": "study_ids",
       "sourceKey": "contact_ids",
       "keyIn": "study",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
-    "materials": {
+    "germplasms": {
       "type": "to_many",
-      "target": "material",
+      "targetStorageType": "sql",
+      "target": "germplasm",
       "targetKey": "study_ids",
-      "sourceKey": "material_ids",
+      "sourceKey": "germplasm_ids",
       "keyIn": "study",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "germplasmName"
     },
     "ontologyAnnotations": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "ontologyAnnotation",
       "targetKey": "study_ids",
       "sourceKey": "ontologyAnnotation_ids",
       "keyIn": "study",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
     },
     "fileAttachments": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "fileAttachment",
       "targetKey": "study_ids",
       "sourceKey": "fileAttachment_ids",
       "keyIn": "study",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
     }
   },
   "internalId": "study_id"

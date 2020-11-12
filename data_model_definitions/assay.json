@@ -1,6 +1,6 @@
 {
   "model": "assay",
-  "storageType": "",
+  "storageType": "sql",
   "attributes": {
     "assay_id": "String",
     "measurement": "String",
@@ -10,56 +10,68 @@
 
     "study_id": "String",
     "factor_ids": "[String]",
-    "material_ids": "[String]",
+    "germplasm_ids": "[String]",
     "ontologyAnnotation_ids": "[String]",
     "fileAttachment_ids": "[String]"
   },
   "associations": {
     "study": {
       "type": "to_one",
+      "targetStorageType": "sql",
       "target": "study",
       "targetKey": "study_id",
-      "keyIn": "assay"
+      "keyIn": "assay",
+      "label": "studyName"
     },
-    "assayResults": {
+    "observations": {
       "type": "to_many",
-      "target": "assayResult",
+      "targetStorageType": "sql",
+      "target": "observation",
       "targetKey": "assay_id",
-      "keyIn": "assayResult"
+      "keyIn": "observation",
+      "label": "value_as_str"
     },
     "factors": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "factor",
       "targetKey": "assay_ids",
       "sourceKey": "factor_ids",
       "keyIn": "assay",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
 
     },
-    "materials": {
+    "germplasms": {
       "type": "to_many",
-      "target": "material",
+      "targetStorageType": "sql",
+      "target": "germplasm",
       "targetKey": "assay_ids",
-      "sourceKey": "material_ids",
+      "sourceKey": "germplasm_ids",
       "keyIn": "assay",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "germplasmName"
     },
     "ontologyAnnotations": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "ontologyAnnotation",
       "targetKey": "assay_ids",
       "sourceKey": "ontologyAnnotation_ids",
       "keyIn": "assay",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
 
     },
     "fileAttachments": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "fileAttachment",
       "targetKey": "assay_ids",
       "sourceKey": "fileAttachment_ids",
       "keyIn": "assay",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
     }
   },
   "internalId": "assay_id"

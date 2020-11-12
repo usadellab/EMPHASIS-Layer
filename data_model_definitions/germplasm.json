@@ -1,0 +1,90 @@
+{
+  "model": "germplasm",
+  "storageType": "sql",
+  "attributes": {
+    "germplasm_id": "String",
+    "germplasmName": "String",
+    "description": "String",
+    "type": "String",
+
+    "study_ids": "[String]",
+    "assay_ids": "[String]",
+    "ontologyAnnotation_ids": "[String]",
+    "sourceSet_ids": "[String]",
+    "element_ids": "[String]",
+    "fileAttachment_ids": "[String]"
+  },
+  "associations": {
+    "studies": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "study",
+      "targetKey": "germplasm_ids",
+      "sourceKey": "study_ids",
+      "keyIn": "germplasm",
+      "reverseAssociationType": "to_many",
+      "label": "studyName"
+    },
+    "assays": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "assay",
+      "targetKey": "germplasm_ids",
+      "sourceKey": "assay_ids",
+      "keyIn": "germplasm",
+      "reverseAssociationType": "to_many",
+      "label": "measurement"
+    },
+    "observations": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "observation",
+      "targetKey": "germplasm_id",
+      "keyIn": "observation",
+      "label": "value_as_str"
+    },
+    "ontologyAnnotation": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "ontologyAnnotation",
+      "targetKey": "germplasm_ids",
+      "sourceKey": "ontologyAnnotation_ids",
+      "keyIn": "germplasm",
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
+    },
+
+    "sourceSets" : {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "germplasm",
+      "targetKey": "element_ids",
+      "sourceKey": "sourceSet_ids",
+      "keyIn": "germplasm",
+      "reverseAssociationType": "to_many",
+      "label": "germplasmName"
+    },
+    "elements" : {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "germplasm",
+      "targetKey": "sourceSet_ids",
+      "sourceKey": "element_ids",
+      "keyIn": "germplasm",
+      "reverseAssociationType": "to_many",
+      "label": "germplasmName"
+    },
+    "fileAttachments": {
+      "type": "to_many",
+      "targetStorageType": "sql",
+      "target": "fileAttachment",
+      "targetKey": "germplasm_ids",
+      "sourceKey": "fileAttachment_ids",
+      "keyIn": "germplasm",
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
+    }
+
+  },
+  "internalId": "germplasm_id"
+}
