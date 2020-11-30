@@ -1,6 +1,6 @@
 {
   "model": "material",
-  "storageType": "",
+  "storageType": "sql",
   "attributes": {
     "material_id": "String",
     "name": "String",
@@ -17,57 +17,72 @@
   "associations": {
     "studies": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "study",
       "targetKey": "material_ids",
       "sourceKey": "study_ids",
       "keyIn": "material",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
     "assays": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "assay",
       "targetKey": "material_ids",
       "sourceKey": "assay_ids",
       "keyIn": "material",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "measurement"
     },
     "assayResults": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "assayResult",
       "targetKey": "material_id",
-      "keyIn": "assayResult"
+      "keyIn": "assayResult",
+      "label": "value_as_str"
     },
     "ontologyAnnotation": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "ontologyAnnotation",
       "targetKey": "material_ids",
       "sourceKey": "ontologyAnnotation_ids",
       "keyIn": "material",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
     },
+
     "sourceSets" : {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "material",
       "targetKey": "element_ids",
       "sourceKey": "sourceSet_ids",
       "keyIn": "material",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
     "elements" : {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "material",
       "targetKey": "sourceSet_ids",
       "sourceKey": "element_ids",
       "keyIn": "material",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
     "fileAttachments": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "fileAttachment",
       "targetKey": "material_ids",
       "sourceKey": "fileAttachment_ids",
       "keyIn": "material",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
     }
 
   },

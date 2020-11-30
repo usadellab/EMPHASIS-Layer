@@ -1,6 +1,6 @@
 {
   "model": "contact",
-  "storageType": "",
+  "storageType": "sql",
   "attributes": { 
     "contact_id" : "String",
     "name" : "String",
@@ -17,35 +17,43 @@
   "associations": {
     "studies": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "study",
       "targetKey": "contact_ids",
       "sourceKey": "study_ids",
       "keyIn": "contact",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "name"
     },
     "investigations": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "investigation",
       "targetKey": "contact_ids",
       "sourceKey": "investigation_ids",
       "keyIn": "contact",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "title"
     },
     "fileAttachments": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "fileAttachment",
       "targetKey": "contact_ids",
       "sourceKey": "fileAttachment_ids",
       "keyIn": "contact",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
     },
     "ontologyAnnotations": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "ontologyAnnotation",
       "targetKey": "contact_ids",
       "sourceKey": "ontologyAnnotation_ids",
       "keyIn": "contact",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
     }
   },
   "internalId": "contact_id"

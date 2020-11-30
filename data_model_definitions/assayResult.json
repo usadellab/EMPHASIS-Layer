@@ -1,13 +1,14 @@
 {
   "model": "assayResult",
-  "storageType": "",
+  "storageType": "sql",
   "attributes": {
     "assayResult_id": "String",
     "unit": "String",
     "value_as_str": "String",
     "value_as_int": "Int",
     "value_as_num": "Float",
-    "value_as_bool": "boolean",
+    "value_as_bool": "Boolean",
+    "value_as_float": "Float",
 
     "assay_id": "String",
     "material_id": "String",
@@ -17,31 +18,39 @@
   "associations": {
     "assay": {
       "type": "to_one",
+      "targetStorageType": "sql",
       "target": "assay",
       "targetKey": "assay_id",
-      "keyIn": "assayResult"
+      "keyIn": "assayResult",
+      "label": "measurement"
     },
     "observedMaterial": {
       "type": "to_one",
+      "targetStorageType": "sql",
       "target": "material",
       "targetKey": "material_id",
-      "keyIn": "assayResult"
+      "keyIn": "assayResult",
+      "label": "name"
     },
     "fileAttachments": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "fileAttachment",
       "targetKey": "assayResult_ids",
       "sourceKey": "fileAttachment_ids",
       "keyIn": "assayResult",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "fileName"
     },
     "ontologyAnnotations": {
       "type": "to_many",
+      "targetStorageType": "sql",
       "target": "ontologyAnnotation",
       "targetKey": "assayResult_ids",
       "sourceKey": "ontologyAnnotation_ids",
       "keyIn": "assayResult",
-      "reverseAssociationType": "to_many"
+      "reverseAssociationType": "to_many",
+      "label": "ontology"
     }
   },
   "internalId": "assayResult_id"
