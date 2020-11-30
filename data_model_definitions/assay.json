@@ -29,7 +29,7 @@
       "target": "assayResult",
       "targetKey": "assay_id",
       "keyIn": "assayResult",
-      "label": "value_as_str"
+      "label": "unit"
     },
     "factors": {
       "type": "to_many",

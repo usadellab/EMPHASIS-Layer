@@ -9,6 +9,7 @@
 
     "study_ids": "[String]",
     "assay_ids": "[String]",
+    "assayResult_ids": "[String]",
     "ontologyAnnotation_ids": "[String]",
     "sourceSet_ids": "[String]",
     "element_ids": "[String]",
@@ -39,9 +40,11 @@
       "type": "to_many",
       "targetStorageType": "sql",
       "target": "assayResult",
-      "targetKey": "material_id",
-      "keyIn": "assayResult",
-      "label": "value_as_str"
+      "targetKey": "material_ids",
+      "sourceKey": "assayResult_ids",
+      "keyIn": "material",
+      "reverseAssociationType": "to_many",
+      "label": "unit"
     },
     "ontologyAnnotation": {
       "type": "to_many",

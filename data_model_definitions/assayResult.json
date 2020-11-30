@@ -6,12 +6,11 @@
     "unit": "String",
     "value_as_str": "String",
     "value_as_int": "Int",
-    "value_as_num": "Float",
     "value_as_bool": "Boolean",
     "value_as_float": "Float",
 
     "assay_id": "String",
-    "material_id": "String",
+    "material_ids": "[String]",
     "ontologyAnnotation_ids": "[String]",
     "fileAttachment_ids": "[String]"
   },
@@ -24,12 +23,14 @@
       "keyIn": "assayResult",
       "label": "measurement"
     },
-    "observedMaterial": {
-      "type": "to_one",
+    "materials": {
+      "type": "to_many",
       "targetStorageType": "sql",
       "target": "material",
-      "targetKey": "material_id",
+      "targetKey": "assayResult_ids",
+      "sourceKey": "material_ids",
       "keyIn": "assayResult",
+      "reverseAssociationType": "to_many",
       "label": "name"
     },
     "fileAttachments": {

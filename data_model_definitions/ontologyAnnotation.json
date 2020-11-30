@@ -56,7 +56,7 @@
       "sourceKey": "assayResult_ids",
       "keyIn": "ontologyAnnotation",
       "reverseAssociationType": "to_many",
-      "label": "value_as_str"
+      "label": "unit"
     },
     "factors": {
       "type": "to_many",
